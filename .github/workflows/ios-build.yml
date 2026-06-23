@@ -22,7 +22,10 @@ jobs:
         run: flutter pub get
 
       - name: Build iOS
-        run: flutter build ios --no-codesign --release
+        run: |
+          flutter clean
+          flutter pub get
+          flutter build ios --no-codesign --release
 
       - name: Package IPA
         run: |

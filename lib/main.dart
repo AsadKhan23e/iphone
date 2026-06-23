@@ -232,8 +232,9 @@ class _StealthHomeScreenState extends State<StealthHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (!_isInit)
+    if (!_isInit) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
 
     return Scaffold(
       body: GestureDetector(
