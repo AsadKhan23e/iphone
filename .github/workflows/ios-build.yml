@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-14 # Specifically use macOS 14 for stability
+    runs-on: macos-14
 
     steps:
       - uses: actions/checkout@v4
@@ -16,6 +16,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+          # Removed version to avoid mismatch
 
       - name: Get dependencies
         run: flutter pub get
