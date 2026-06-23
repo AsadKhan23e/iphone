@@ -3,11 +3,11 @@ name: Build iOS App
 on:
   push:
     branches: [ main ]
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-14 # Specifically use macOS 14 for stability
 
     steps:
       - uses: actions/checkout@v4
@@ -16,7 +16,6 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.10.7'
 
       - name: Get dependencies
         run: flutter pub get
@@ -24,10 +23,10 @@ jobs:
       - name: Build iOS
         run: flutter build ios --no-codesign --release
 
-      - name: Create Placeholder IPA
+      - name: Package IPA
         run: |
           mkdir -p Payload
-          cp -r build/ios/iphone/Release-iphoneos/Runner.app Payload/
+          find build/ios -name "Runner.app" -type d -exec cp -r {} Payload/ \;
           zip -r stealth_recorder.ipa Payload
 
       - name: Upload Artifact
