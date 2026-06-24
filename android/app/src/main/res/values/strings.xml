@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">StealthCam</string>
+    <string name="title_activity_main">StealthCam</string>
+    <string name="package_name">com.stealthcam.recorder</string>
+    <string name="custom_url_scheme">com.stealthcam.recorder</string>
+</resources>

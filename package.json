@@ -1,0 +1,33 @@
+{
+  "name": "iphone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cap:init": "npx cap init StealthCam com.stealthcam.recorder --web-dir www",
+    "cap:add": "npx cap add android",
+    "cap:sync": "npx cap sync android",
+    "cap:open": "npx cap open android",
+    "cap:build": "npx cap sync android && echo Done. Open Android Studio to build APK."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsadKhan23e/iphone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AsadKhan23e/iphone/issues"
+  },
+  "homepage": "https://github.com/AsadKhan23e/iphone#readme",
+  "dependencies": {
+    "@capacitor/android": "^8.4.1",
+    "@capacitor/camera": "^8.2.0",
+    "@capacitor/cli": "^8.4.1",
+    "@capacitor/core": "^8.4.1",
+    "@capacitor/filesystem": "^8.1.2"
+  }
+}
